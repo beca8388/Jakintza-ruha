@@ -1,32 +1,62 @@
-/* jakintza-ruha: style.css */
-
-body { background-color: #1e1129; color: #f0e7ff; font-family: 'Cinzel Decorative', cursive; margin: 0; padding: 0; text-align: center; }
-
-h1, h2, h3 { font-family: 'Uncial Antiqua', cursive; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3); color: #e4d2ff; margin-bottom: 0.5em; }
-
-p, label { font-family: 'Cormorant Garamond', serif; font-size: 1.1em; margin: 0.5em auto; width: 80%; }
-
-button { background-color: #673ab7; color: #fff; border: none; padding: 10px 20px; margin: 10px; border-radius: 12px; font-size: 1em; font-family: 'Cinzel Decorative', cursive; box-shadow: 0 0 10px #9c27b0, 0 0 20px #fff; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.3s ease; }
-
-button:hover { transform: scale(1.05); box-shadow: 0 0 20px #fff, 0 0 30px #9c27b0; }
-
-input[type="text"] { padding: 10px; font-size: 1em; width: 80%; border-radius: 10px; border: 2px solid #ba68c8; margin-top: 10px; background-color: #2a153c; color: #fff; }
-
-select { padding: 10px; font-size: 1em; margin: 10px; border-radius: 8px; background-color: #4a148c; color: #fff; border: none; font-family: 'Cormorant Garamond', serif; }
-
-.hidden { display: none; }
-
-.section { padding: 20px; margin: 20px 0; border: 1px dashed #9c27b0; border-radius: 15px; background-color: rgba(255, 255, 255, 0.05); box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.1); }
-
-.dashboard { padding: 20px; margin: 10px auto; width: 90%; background-color: rgba(0, 0, 0, 0.5); border: 2px solid #fff3; border-radius: 12px; box-shadow: 0 0 10px #673ab7; }
-
-#xpDisplay { font-size: 1.3em; font-weight: bold; color: #ffe082; margin-bottom: 1em; text-shadow: 1px 1px 4px #ffeb3b; }
-
-/* Elemental buttons */ .element-button { padding: 12px 20px; margin: 10px; font-size: 1.1em; font-family: 'Uncial Antiqua', cursive; border-radius: 50px; border: none; cursor: pointer; color: #fff; box-shadow: 0 0 10px #aaa; transition: all 0.3s ease; }
-
-.element-button.fire { background-color: #ff7043; box-shadow: 0 0 10px #ff5722; } .element-button.water { background-color: #4dd0e1; box-shadow: 0 0 10px #00bcd4; } .element-button.earth { background-color: #aed581; box-shadow: 0 0 10px #8bc34a; } .element-button.air { background-color: #81d4fa; box-shadow: 0 0 10px #03a9f4; } .element-button.aether { background-color: #ce93d8; box-shadow: 0 0 10px #ba68c8; }
-
-.element-button:hover { transform: scale(1.1); box-shadow: 0 0 20px #fff, 0 0 30px #9c27b0; }
-
-footer { margin-top: 2em; font-size: 0.9em; color: #ccc; font-family: 'Cormorant Garamond', serif; }
-
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jakintza Ruha: Academy of Remembering</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    .level-card { transition: transform 0.3s ease; }
+    .level-card:hover { transform: scale(1.05); }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-purple-900 to-black text-white font-sans">
+  <header class="text-center py-6 bg-purple-800 shadow-md">
+    <h1 class="text-4xl font-bold">Jakintza Ruha: Academy of Remembering</h1>
+    <p class="text-sm italic">"A Magical Curriculum for the New Earth Child"</p>
+  </header>  <section class="max-w-5xl mx-auto py-10 px-4 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <!-- LEVEL CARDS -->
+    <div class="bg-purple-700 rounded-2xl p-6 level-card shadow-xl">
+      <h2 class="text-2xl font-semibold">Kindled (K–1)</h2>
+      <p class="text-sm mt-2">The Spark of Wonder</p>
+    </div>
+    <div class="bg-purple-700 rounded-2xl p-6 level-card shadow-xl">
+      <h2 class="text-2xl font-semibold">Luminous (2–3)</h2>
+      <p class="text-sm mt-2">The Light of Curiosity</p>
+    </div>
+    <div class="bg-purple-700 rounded-2xl p-6 level-card shadow-xl">
+      <h2 class="text-2xl font-semibold">Rooted (4–5)</h2>
+      <p class="text-sm mt-2">The Foundation of Wisdom</p>
+    </div>
+    <div class="bg-purple-700 rounded-2xl p-6 level-card shadow-xl">
+      <h2 class="text-2xl font-semibold">Woven (6–7)</h2>
+      <p class="text-sm mt-2">Interconnection & Empathy</p>
+    </div>
+    <div class="bg-purple-700 rounded-2xl p-6 level-card shadow-xl">
+      <h2 class="text-2xl font-semibold">Luminaries (8–9)</h2>
+      <p class="text-sm mt-2">Inner Flame & Service</p>
+    </div>
+    <div class="bg-purple-700 rounded-2xl p-6 level-card shadow-xl">
+      <h2 class="text-2xl font-semibold">Ascendants (10–11)</h2>
+      <p class="text-sm mt-2">Shadow Work & Mastery</p>
+    </div>
+    <div class="bg-purple-700 rounded-2xl p-6 level-card shadow-xl">
+      <h2 class="text-2xl font-semibold">The Ascendants (12)</h2>
+      <p class="text-sm mt-2">Legacy Work & Sacred Leadership</p>
+    </div>
+  </section>  <section class="max-w-5xl mx-auto px-4 py-8">
+    <h2 class="text-3xl font-bold mb-4">Extras</h2>
+    <ul class="space-y-3 list-disc list-inside">
+      <li>🌬️ AI Spirit Guide Mentors (elemental chatbots per level)</li>
+      <li>📚 Gamified XP System with unlockables</li>
+      <li>🗣️ Choose 1 Living & 1 Dead Language per student</li>
+      <li>🌀 Grimoire Expansion System (interactive sacred journal)</li>
+      <li>🧘‍♀️ Guided Breathwork + Audio Rituals</li>
+      <li>🔮 Optional Pathways: Elemental, Astral, Herbal, Starbound</li>
+      <li>👨‍👩‍👧‍👦 Parent Portal with Resources and Progress Tracking</li>
+      <li>🧑‍🏫 Admin Dashboard (student management, rituals, assignments)</li>
+    </ul>
+  </section>  <footer class="bg-purple-900 py-6 mt-10 text-center text-sm text-gray-300">
+    &copy; 2025 Jakintza Ruha | Academy of Remembering. All Rights Reserved.
+  </footer>
+</body>
+</html>
