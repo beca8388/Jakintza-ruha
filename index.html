@@ -3,93 +3,81 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jakintza Ruha: Academy of Remembering</title>
-  <link href="https://fonts.googleapis.com/css2?family=Unica+One&family=Rajdhani:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --glow-fire: #ff6b6b;
-      --glow-water: #4ecdc4;
-      --glow-earth: #9be564;
-      --glow-air: #c4f0ff;
-      --glow-aether: #d6a0ff;
-    }body {
-  background: #1a1125;
-  color: white;
-  font-family: 'Rajdhani', sans-serif;
-  padding: 20px;
-  text-align: center;
-}
-
-h1, h2, h3 {
-  font-family: 'Unica One', cursive;
-  letter-spacing: 1px;
-}
-
-.glow-button {
-  border: none;
-  padding: 10px 20px;
-  border-radius: 12px;
-  background: var(--glow-color);
-  color: black;
-  font-weight: bold;
-  cursor: pointer;
-  animation: pulseGlow 2s infinite;
-  transition: transform 0.2s ease;
-  margin: 10px;
-}
-
-.glow-button:hover {
-  transform: scale(1.05);
-}
-
-@keyframes pulseGlow {
-  0% { box-shadow: 0 0 0px var(--glow-color); }
-  50% { box-shadow: 0 0 20px var(--glow-color); }
-  100% { box-shadow: 0 0 0px var(--glow-color); }
-}
-
-.fade-in {
-  opacity: 0;
-  transform: translateY(10px);
-  animation: fadeIn 1s forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+    body {
+      margin: 0;
+      font-family: 'DotGothic16', sans-serif;
+      background-color: #1b1124;
+      color: #ffffff;
+      text-align: center;
+      padding: 2rem;
+    }
+    h1, h2 {
+      margin-top: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    button {
+      background-color: #333;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      margin: 0.5rem;
+      border-radius: 1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 0 10px #000;
+      transition: all 0.2s ease-in-out;
+    }
+    button:hover {
+      transform: scale(1.05);
+    }
+    .fire { background: #ff4d4d; box-shadow: 0 0 15px #ff4d4d; }
+    .water { background: #33cccc; box-shadow: 0 0 15px #33cccc; }
+    .earth { background: #99cc33; box-shadow: 0 0 15px #99cc33; }
+    .air { background: #cceeff; box-shadow: 0 0 15px #cceeff; color: #000; }
+    .aether { background: #cc99ff; box-shadow: 0 0 15px #cc99ff; }
+    .section { margin: 3rem 0; }
+    .hidden { display: none; }
+    input[type="text"] {
+      padding: 0.5rem;
+      width: 80%;
+      max-width: 400px;
+      border-radius: 0.5rem;
+      border: none;
+    }
   </style>
 </head>
 <body>
-  <h1 class="fade-in">Jakintza Ruha: Academy of Remembering</h1>  <div class="fade-in">
+  <h1>Jakintza Ruha: Academy of Remembering</h1>  <div class="section">
     <h2>Welcome, Initiate</h2>
     <p>Begin your elemental journey. Choose a path or continue your training below.</p>
-  </div>  <div class="fade-in">
+  </div>  <div class="section">
     <h2>Meet Your Spirit Guides</h2>
     <p>Select an element to connect with your archetype mentor:</p>
-    <button class="glow-button" style="--glow-color: var(--glow-fire);" onclick="setAffinity('Fire')">🔥 Fire</button>
-    <button class="glow-button" style="--glow-color: var(--glow-water);" onclick="setAffinity('Water')">💧 Water</button>
-    <button class="glow-button" style="--glow-color: var(--glow-earth);" onclick="setAffinity('Earth')">🌿 Earth</button>
-    <button class="glow-button" style="--glow-color: var(--glow-air);" onclick="setAffinity('Air')">🌬️ Air</button>
-    <button class="glow-button" style="--glow-color: var(--glow-aether);" onclick="setAffinity('Aether')">✨ Aether</button>
-  </div>  <div class="fade-in">
+    <button class="fire" onclick="setAffinity('Fire')">🔥 Fire</button>
+    <button class="water" onclick="setAffinity('Water')">💧 Water</button>
+    <button class="earth" onclick="setAffinity('Earth')">🌿 Earth</button>
+    <button class="air" onclick="setAffinity('Air')">💨 Air</button>
+    <button class="aether" onclick="setAffinity('Aether')">✨ Aether</button>
+  </div>  <div class="section">
     <h2>Elemental Challenges</h2>
     <p>Unlock sacred tests and mini-games to deepen your elemental mastery.</p>
-    <button class="glow-button" style="--glow-color: var(--glow-fire);">Fire Test</button>
-    <button class="glow-button" style="--glow-color: var(--glow-water);">Water Test</button>
-    <button class="glow-button" style="--glow-color: var(--glow-earth);">Earth Test</button>
-    <button class="glow-button" style="--glow-color: var(--glow-air);">Air Test</button>
-  </div>  <div class="fade-in">
+    <button class="fire" onclick="showElementalChallenge('Fire')">Fire Test</button>
+    <button class="water" onclick="showElementalChallenge('Water')">Water Test</button>
+    <button class="earth" onclick="showElementalChallenge('Earth')">Earth Test</button>
+    <button class="air" onclick="showElementalChallenge('Air')">Air Test</button>
+  </div>  <div class="section">
     <h2>Oracle Panel</h2>
     <p>Receive messages from the Akashic Web. Ask a question and the Oracle shall answer.</p>
-    <input type="text" placeholder="Ask your question..." style="padding: 10px; border-radius: 8px; width: 60%;">
-    <br><br>
-    <button class="glow-button" style="--glow-color: var(--glow-aether);">Receive Oracle Message</button>
-  </div>  <script>
-    function setAffinity(element) {
-      alert(`You have chosen ${element} as your elemental path.`);
-    }
-  </script></body>
+    <input type="text" placeholder="Hi" />
+  </div>  <!-- Hidden Elements Display -->  <div id="challenge-display" class="hidden"></div>
+  <div id="ritual-display" class="hidden"></div>
+  <div id="quest-display" class="hidden"></div>
+  <div id="spirit-guide-display" class="hidden"></div>
+  <div id="parent-dashboard" class="hidden dashboard"></div>
+  <div id="admin-dashboard" class="hidden dashboard"></div>
+  <div id="affinity-display" class="hidden"></div>
+  <div id="xpdisplay" class="section"></div>  <script src="Script.js"></script></body>
 </html>
