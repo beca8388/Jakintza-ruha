@@ -1,32 +1,53 @@
-/* jakintza-ruha: style.css */
+/* Jakintza Ruha: Elemental Affinity Test - CSS Style Sheet */
 
-body { background-color: #1e1129; color: #f0e7ff; font-family: 'Cinzel Decorative', cursive; margin: 0; padding: 0; text-align: center; }
+/* GENERAL RESET & BASE */
 
-h1, h2, h3 { font-family: 'Uncial Antiqua', cursive; text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3); color: #e4d2ff; margin-bottom: 0.5em; }
+{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cormorant Garamond', serif; scroll-behavior: smooth; }
 
-p, label { font-family: 'Cormorant Garamond', serif; font-size: 1.1em; margin: 0.5em auto; width: 80%; }
 
-button { background-color: #673ab7; color: #fff; border: none; padding: 10px 20px; margin: 10px; border-radius: 12px; font-size: 1em; font-family: 'Cinzel Decorative', cursive; box-shadow: 0 0 10px #9c27b0, 0 0 20px #fff; cursor: pointer; transition: transform 0.2s ease, box-shadow 0.3s ease; }
+body { background: linear-gradient(to bottom, #0e0b16, #1f1b2e); color: #f3f0e6; min-height: 100vh; overflow-x: hidden; }
 
-button:hover { transform: scale(1.05); box-shadow: 0 0 20px #fff, 0 0 30px #9c27b0; }
+/* HEADER / LOGO */ header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background-color: rgba(12, 10, 20, 0.8); box-shadow: 0 0 10px #4b3b72; }
 
-input[type="text"] { padding: 10px; font-size: 1em; width: 80%; border-radius: 10px; border: 2px solid #ba68c8; margin-top: 10px; background-color: #2a153c; color: #fff; }
+header img.logo { height: 60px; }
 
-select { padding: 10px; font-size: 1em; margin: 10px; border-radius: 8px; background-color: #4a148c; color: #fff; border: none; font-family: 'Cormorant Garamond', serif; }
+header nav a { color: #e0d6ff; text-decoration: none; margin-left: 2rem; font-size: 1.1rem; transition: color 0.3s ease; }
 
-.hidden { display: none; }
+header nav a:hover { color: #ffcc70; }
 
-.section { padding: 20px; margin: 20px 0; border: 1px dashed #9c27b0; border-radius: 15px; background-color: rgba(255, 255, 255, 0.05); box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.1); }
+/* HERO SECTION */ .hero { text-align: center; padding: 6rem 2rem; background-image: url('/images/obsidian-mirror-portal.jpg'); background-size: cover; background-position: center; color: #ffffff; position: relative; }
 
-.dashboard { padding: 20px; margin: 10px auto; width: 90%; background-color: rgba(0, 0, 0, 0.5); border: 2px solid #fff3; border-radius: 12px; box-shadow: 0 0 10px #673ab7; }
+.hero::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 1; }
 
-#xpDisplay { font-size: 1.3em; font-weight: bold; color: #ffe082; margin-bottom: 1em; text-shadow: 1px 1px 4px #ffeb3b; }
+.hero h1 { font-size: 3rem; position: relative; z-index: 2; text-shadow: 0 0 10px #c68cff; }
 
-/* Elemental buttons */ .element-button { padding: 12px 20px; margin: 10px; font-size: 1.1em; font-family: 'Uncial Antiqua', cursive; border-radius: 50px; border: none; cursor: pointer; color: #fff; box-shadow: 0 0 10px #aaa; transition: all 0.3s ease; }
+.hero p { font-size: 1.5rem; margin-top: 1rem; position: relative; z-index: 2; color: #e4daff; }
 
-.element-button.fire { background-color: #ff7043; box-shadow: 0 0 10px #ff5722; } .element-button.water { background-color: #4dd0e1; box-shadow: 0 0 10px #00bcd4; } .element-button.earth { background-color: #aed581; box-shadow: 0 0 10px #8bc34a; } .element-button.air { background-color: #81d4fa; box-shadow: 0 0 10px #03a9f4; } .element-button.aether { background-color: #ce93d8; box-shadow: 0 0 10px #ba68c8; }
+.hero button { margin-top: 2rem; padding: 1rem 2rem; font-size: 1.1rem; background: #9d4edd; border: none; border-radius: 12px; color: white; cursor: pointer; z-index: 2; position: relative; transition: background 0.3s ease, transform 0.3s ease; }
 
-.element-button:hover { transform: scale(1.1); box-shadow: 0 0 20px #fff, 0 0 30px #9c27b0; }
+.hero button:hover { background: #7b2cbf; transform: scale(1.05); }
 
-footer { margin-top: 2em; font-size: 0.9em; color: #ccc; font-family: 'Cormorant Garamond', serif; }
+/* QUIZ CONTAINER */ .quiz-container { max-width: 800px; margin: 4rem auto; background: rgba(255, 255, 255, 0.05); border: 2px solid #6c4dc4; border-radius: 16px; padding: 2rem; box-shadow: 0 0 20px #452a7a; }
+
+.question { font-size: 1.4rem; margin-bottom: 1rem; color: #f0eaff; }
+
+.options { display: flex; flex-direction: column; gap: 1rem; }
+
+.option { background: rgba(157, 78, 221, 0.2); border: 1px solid #c7a6ff; border-radius: 10px; padding: 1rem; cursor: pointer; transition: background 0.3s ease, transform 0.2s ease; }
+
+.option:hover { background: rgba(157, 78, 221, 0.4); transform: scale(1.02); }
+
+/* ELEMENT COLORS */ .option.earth { border-left: 5px solid #7ba46e; } .option.fire { border-left: 5px solid #ff5e5e; } .option.water { border-left: 5px solid #5ecbff; } .option.air { border-left: 5px solid #e0e8ff; } .option.aether { border-left: 5px solid #dcdcdc; }
+
+/* RESULT SECTION */ .result { text-align: center; margin-top: 3rem; background: rgba(255, 255, 255, 0.07); padding: 2rem; border-radius: 12px; box-shadow: 0 0 10px #7a5dce; }
+
+.result h2 { font-size: 2rem; margin-bottom: 1rem; color: #ffeecf; text-shadow: 0 0 10px #ffd38c; }
+
+.result p { font-size: 1.2rem; color: #f0eaff; }
+
+/* CERTIFICATE & CTA */ .certificate { margin-top: 2rem; background: #201933; border: 2px dashed #d9c7ff; padding: 1.5rem; border-radius: 16px; text-align: center; color: #eaddff; font-style: italic; }
+
+button.cta { margin-top: 2rem; padding: 1rem 2rem; font-size: 1rem; border-radius: 12px; background: linear-gradient(to right, #ffb347, #ffcc33); color: #1a001f; font-weight: bold; border: none; cursor: pointer; transition: all 0.3s ease; }
+
+button.cta:hover { background: linear-gradient(to right, #ffd480, #ffff99); transform: scale(1.05); }
 
