@@ -1,99 +1,57 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jakintza Ruha: Academy of Remembering</title>
-  <style>
-    body {
-      background: #1e1e2f;
-      color: #fff;
-      font-family: 'Verdana', sans-serif;
-      padding: 20px;
-    }
-    button {
-      padding: 8px 16px;
-      margin: 5px;
-      background: #6B5CA5;
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      border-radius: 8px;
-    }
-    .hidden { display: none; }
-    .dashboard { background: #2b2b3d; padding: 15px; border-radius: 10px; margin-top: 10px; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Jakintza Ruha: Academy of Remembering</h1>
-  <p id="xpDisplay">✨ XP: 0</p><button onclick="showAffinitySelector()">Choose Element</button> <button onclick="showBreathwork()">Breathwork</button> <button onclick="showElementalQuests()">Elemental Quests</button> <button onclick="showSpiritGuide()">Spirit Guide</button> <button onclick="showElementalChallenge()">Elemental Challenge</button> <button onclick="showParentDashboard()">Mentor Dashboard</button> <button onclick="showAdminDashboard()">Oracle Panel</button>
+  <header>
+    <h1>Jakintza Ruha: Academy of Remembering</h1>
+    <nav>
+      <ul>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#spirit-guides">Spirit Guide AI</a></li>
+        <li><a href="#elemental-challenges">Elemental Challenges</a></li>
+        <li><a href="#oracle">Oracle Panel</a></li>
+      </ul>
+    </nav>
+  </header>  <main>
+    <section id="dashboard">
+      <h2>Welcome, Initiate</h2>
+      <p>Begin your elemental journey. Choose a path or continue your training below.</p>
+    </section><section id="spirit-guides">
+  <h2>Meet Your Spirit Guides</h2>
+  <div id="guide-chat">
+    <p>Select an element to connect with your archetype mentor:</p>
+    <button onclick="summonGuide('fire')">🔥 Fire</button>
+    <button onclick="summonGuide('water')">💧 Water</button>
+    <button onclick="summonGuide('earth')">🌿 Earth</button>
+    <button onclick="summonGuide('air')">🌬️ Air</button>
+    <div id="chat-box"></div>
+  </div>
+</section>
 
-  <div id="affinity-display" class="hidden"></div>
-  <div id="ritual-display" class="hidden"></div>
-  <div id="quest-display" class="hidden"></div>
-  <div id="spirit-guide-display" class="hidden"></div>
-  <div id="challenge-display" class="hidden"></div>
-  <div id="parent-dashboard" class="hidden dashboard"></div>
-  <div id="admin-dashboard" class="hidden dashboard"></div>  <script>
-    let xpPoints = 0;
-    const xpDisplay = document.getElementById("xpDisplay");
+<section id="elemental-challenges">
+  <h2>Elemental Challenges</h2>
+  <p>Unlock sacred tests and mini-games to deepen your elemental mastery.</p>
+  <ul>
+    <li><button onclick="startChallenge('fire')">Fire Test</button></li>
+    <li><button onclick="startChallenge('water')">Water Test</button></li>
+    <li><button onclick="startChallenge('earth')">Earth Test</button></li>
+    <li><button onclick="startChallenge('air')">Air Test</button></li>
+  </ul>
+</section>
 
-    function gainXP(points) {
-      xpPoints += points;
-      updateXPDisplay();
-    }
+<section id="oracle">
+  <h2>Oracle Panel</h2>
+  <p>Receive messages from the Akashic Web. Ask a question and the Oracle shall answer.</p>
+  <input type="text" id="oracleQuestion" placeholder="Ask your question...">
+  <button onclick="askOracle()">Consult Oracle</button>
+  <div id="oracleAnswer"></div>
+</section>
 
-    function updateXPDisplay() {
-      let title = "Initiate";
-      if (xpPoints >= 100) title = "Starseed Ascendant";
-      else if (xpPoints >= 60) title = "Mystic Scholar";
-      else if (xpPoints >= 30) title = "Elemental Seeker";
-      const badgeMap = {
-        Fire: "🔥",
-        Water: "🌊",
-        Air: "🌬️",
-        Earth: "🌍",
-        Aether: "🌌"
-      };
-      const badge = badgeMap[localStorage.getItem("elementAffinity")] || "✨";
-      xpDisplay.innerHTML = `✨ XP: ${xpPoints} <br/>🎖️ ${badge} ${title}`;
-    }
-
-    function hideAll() {
-      document.querySelectorAll(".hidden, .dashboard").forEach(div => div.style.display = "none");
-    }
-
-    function showParentDashboard() {
-      hideAll();
-      const el = document.getElementById("parent-dashboard");
-      el.style.display = "block";
-      const affinity = localStorage.getItem("elementAffinity") || "Not chosen";
-      el.innerHTML = `
-        <h2>Mentor Dashboard</h2>
-        <p>Student Element: ${affinity}</p>
-        <p>XP: ${xpPoints}</p>
-        <label><input type='checkbox'> 🌿 Breathwork Completed</label><br>
-        <label><input type='checkbox'> 🔮 First Quest Done</label><br>
-        <label><input type='checkbox'> 🧘‍♂️ Journal Submitted</label><br><br>
-        <button onclick="alert('You have blessed this soul.')">✨ Send Blessing</button>
-      `;
-    }
-
-    function showAdminDashboard() {
-      hideAll();
-      const el = document.getElementById("admin-dashboard");
-      el.style.display = "block";
-      el.innerHTML = `
-        <h2>🧿 Oracle Panel (Administrator)</h2>
-        <p>Current Element: ${localStorage.getItem("elementAffinity")}</p>
-        <p>Current XP: ${xpPoints}</p>
-        <button onclick="gainXP(10)">+10 XP</button>
-        <button onclick="xpPoints = 0; updateXPDisplay()">Reset XP</button><br><br>
-        <textarea placeholder='Upload new ritual text here...' style='width:100%;height:80px;'></textarea><br><button onclick="alert('Ritual uploaded!')">Upload Ritual</button><br><br>
-    <textarea placeholder='Broadcast message to all users...' style='width:100%;height:60px;'></textarea><br>
-    <button onclick="alert('Message sent to the ether.')">Broadcast</button>
-  `;
-}
-
-  </script>
-</body>
-</html>index.html
+  </main>  <footer>
+    <p>&copy; 2025 Jakintza Ruha | The Path of Remembering</p>
+  </footer>  <script src="script.js"></script></body>
+</html>
