@@ -1,0 +1,75 @@
+/* ✨ Jakintza Ruha: Academy of Remembering ✨ */
+
+body {
+  background: linear-gradient(to bottom, #1e1e2f, #2c2c3a);
+  color: #ffffff;
+  font-family: 'Verdana', sans-serif;
+  padding: 20px;
+  margin: 0;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #e0d3ff;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.1rem;
+  text-align: center;
+}
+
+button {
+  padding: 10px 16px;
+  margin: 5px;
+  background: #6b5bca;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  background: #7a6ce0;
+  transform: scale(1.05);
+}
+
+.hidden {
+  display: none;
+}
+
+.dashboard {
+  background: #2b2b3d;
+  padding: 15px;
+  border-radius: 12px;
+  margin-top: 20px;
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+input[type="checkbox"] {
+  margin: 0 5px 0 0;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.95rem;
+}
+
+/* XP and Badge Styling */
+#xpDisplay {
+  margin-top: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ffd700;
+}
+
+/* Elemental color hints (future upgrade-ready) */
+.element-fire { color: #ff7043; }
+.element-water { color: #42a5f5; }
+.element-air { color: #81d4fa; }
+.element-earth { color: #a5d6a7; }
+.element-aether { color: #ce93d8; }
