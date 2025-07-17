@@ -1,4 +1,4 @@
-// Jakintza Ruha Portal Scroll Script
+// Jakintza Ruha Scroll Spell: Activate Smooth Entry
 
 document.addEventListener("DOMContentLoaded", () => {
   const enterButton = document.querySelector(".enter-btn");
