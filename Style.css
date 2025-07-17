@@ -1,53 +1,83 @@
-/* Jakintza Ruha: Elemental Affinity Test - CSS Style Sheet */
+body {
+  margin: 0;
+  font-family: 'Georgia', serif;
+  background: #0d0c1d;
+  color: #eee;
+}
 
-/* GENERAL RESET & BASE */
+.hero {
+  height: 100vh;
+  background: url('https://images.unsplash.com/photo-1605036010375-5a75c329e16a') center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
 
-{ margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cormorant Garamond', serif; scroll-behavior: smooth; }
+.portal {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 3rem;
+  border-radius: 15px;
+  box-shadow: 0 0 30px #cbbcf6;
+}
 
+.title {
+  font-size: 3rem;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
 
-body { background: linear-gradient(to bottom, #0e0b16, #1f1b2e); color: #f3f0e6; min-height: 100vh; overflow-x: hidden; }
+.subtitle {
+  font-size: 1.3rem;
+  margin: 10px 0 30px;
+  color: #b8b8f3;
+}
 
-/* HEADER / LOGO */ header { display: flex; justify-content: space-between; align-items: center; padding: 1.5rem 3rem; background-color: rgba(12, 10, 20, 0.8); box-shadow: 0 0 10px #4b3b72; }
+.enter-btn {
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  background: #8c52ff;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
 
-header img.logo { height: 60px; }
+.enter-btn:hover {
+  background: #a68eff;
+}
 
-header nav a { color: #e0d6ff; text-decoration: none; margin-left: 2rem; font-size: 1.1rem; transition: color 0.3s ease; }
+.info {
+  padding: 4rem 2rem;
+  background: #191825;
+  max-width: 800px;
+  margin: 0 auto;
+  border-top: 2px solid #8c52ff;
+}
 
-header nav a:hover { color: #ffcc70; }
+.info h2 {
+  font-size: 2rem;
+  color: #e6e0ff;
+}
 
-/* HERO SECTION */ .hero { text-align: center; padding: 6rem 2rem; background-image: url('/images/obsidian-mirror-portal.jpg'); background-size: cover; background-position: center; color: #ffffff; position: relative; }
+.info h3 {
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  color: #d1c3ff;
+}
 
-.hero::before { content: ""; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.6); z-index: 1; }
+.info p,
+.info li {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
 
-.hero h1 { font-size: 3rem; position: relative; z-index: 2; text-shadow: 0 0 10px #c68cff; }
-
-.hero p { font-size: 1.5rem; margin-top: 1rem; position: relative; z-index: 2; color: #e4daff; }
-
-.hero button { margin-top: 2rem; padding: 1rem 2rem; font-size: 1.1rem; background: #9d4edd; border: none; border-radius: 12px; color: white; cursor: pointer; z-index: 2; position: relative; transition: background 0.3s ease, transform 0.3s ease; }
-
-.hero button:hover { background: #7b2cbf; transform: scale(1.05); }
-
-/* QUIZ CONTAINER */ .quiz-container { max-width: 800px; margin: 4rem auto; background: rgba(255, 255, 255, 0.05); border: 2px solid #6c4dc4; border-radius: 16px; padding: 2rem; box-shadow: 0 0 20px #452a7a; }
-
-.question { font-size: 1.4rem; margin-bottom: 1rem; color: #f0eaff; }
-
-.options { display: flex; flex-direction: column; gap: 1rem; }
-
-.option { background: rgba(157, 78, 221, 0.2); border: 1px solid #c7a6ff; border-radius: 10px; padding: 1rem; cursor: pointer; transition: background 0.3s ease, transform 0.2s ease; }
-
-.option:hover { background: rgba(157, 78, 221, 0.4); transform: scale(1.02); }
-
-/* ELEMENT COLORS */ .option.earth { border-left: 5px solid #7ba46e; } .option.fire { border-left: 5px solid #ff5e5e; } .option.water { border-left: 5px solid #5ecbff; } .option.air { border-left: 5px solid #e0e8ff; } .option.aether { border-left: 5px solid #dcdcdc; }
-
-/* RESULT SECTION */ .result { text-align: center; margin-top: 3rem; background: rgba(255, 255, 255, 0.07); padding: 2rem; border-radius: 12px; box-shadow: 0 0 10px #7a5dce; }
-
-.result h2 { font-size: 2rem; margin-bottom: 1rem; color: #ffeecf; text-shadow: 0 0 10px #ffd38c; }
-
-.result p { font-size: 1.2rem; color: #f0eaff; }
-
-/* CERTIFICATE & CTA */ .certificate { margin-top: 2rem; background: #201933; border: 2px dashed #d9c7ff; padding: 1.5rem; border-radius: 16px; text-align: center; color: #eaddff; font-style: italic; }
-
-button.cta { margin-top: 2rem; padding: 1rem 2rem; font-size: 1rem; border-radius: 12px; background: linear-gradient(to right, #ffb347, #ffcc33); color: #1a001f; font-weight: bold; border: none; cursor: pointer; transition: all 0.3s ease; }
-
-button.cta:hover { background: linear-gradient(to right, #ffd480, #ffff99); transform: scale(1.05); }
-
+.signature {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #b8b8f3;
+}
