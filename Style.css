@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Quicksand:wght@400;700&display=swap');
 
+/* Base styles */
 body {
   margin: 0;
   font-family: 'Playfair Display', serif;
@@ -32,7 +33,7 @@ ul {
   animation: glow 4s ease-in-out infinite;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
   height: 100vh;
   background: url('https://images.unsplash.com/photo-1605036010375-5a75c329e16a') center/cover no-repeat;
@@ -79,7 +80,7 @@ ul {
   box-shadow: 0 0 25px #ffdcfc;
 }
 
-/* Info, Aion Bio, Coming Soon */
+/* Info, Bio, Coming Soon */
 .info, .aion-bio, .coming-soon-section {
   padding: 4rem 2rem;
   max-width: 900px;
@@ -102,6 +103,15 @@ ul {
   box-shadow: 0 0 25px #ffd3e3;
 }
 
+.preview-img {
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin: 1rem 0;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
 .coming-soon-section h2, .info h2, .aion-bio h2 {
   text-align: center;
   font-size: 2.5rem;
@@ -109,7 +119,7 @@ ul {
 }
 
 .cosmic-list li {
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
   padding-left: 1rem;
   border-left: 3px solid #fff5c3;
   color: #eee;
@@ -146,6 +156,7 @@ ul {
   text-decoration: none;
 }
 
+/* Animations */
 @keyframes glow {
   0%, 100% {
     filter: drop-shadow(0 0 5px #ffeaae);
